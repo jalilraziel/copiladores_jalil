@@ -1,0 +1,22 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  CglobalNode.cpp
+  CLocalNode.cpp
+  CopilerCore.cpp
+  Ctabsym.cpp
+  ErrorsModule.cpp
+  Manager.cpp
+  Generando código...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+Ctabsym.obj : error LNK2005: ya se defini・"public: __thiscall CglobalNode::~CglobalNode(void)" (??1CglobalNode@@QAE@XZ) en CglobalNode.obj
+Ctabsym.obj : error LNK2005: ya se defini・"public: __thiscall CglobalNode::~CglobalNode(void)" (??1CglobalNode@@$$FQAE@XZ) en CglobalNode.obj
+Manager.obj : error LNK2028: se hace referencia al s匇bolo (token) sin resolver (0A00044F) "public: __clrcall UADCompilerCore::LexAnalyzer::LexAnalyzer(class UADCompilerCore::ErrorsModule ^)" (??0LexAnalyzer@UADCompilerCore@@$$FQAM@P$AAVErrorsModule@1@@Z) en la funci "public: __clrcall UADCompilerCore::Manager::Manager(void)" (??0Manager@UADCompilerCore@@$$FQ$AAM@XZ)
+Manager.obj : error LNK2028: se hace referencia al s匇bolo (token) sin resolver (0A000450) "public: __thiscall UADCompilerCore::LexAnalyzer::~LexAnalyzer(void)" (??1LexAnalyzer@UADCompilerCore@@$$FQAE@XZ) en la funci "public: void * __thiscall UADCompilerCore::LexAnalyzer::`scalar deleting destructor'(unsigned int)" (??_GLexAnalyzer@UADCompilerCore@@$$FQAEPAXI@Z)
+Manager.obj : error LNK2028: se hace referencia al s匇bolo (token) sin resolver (0A000451) "public: bool __thiscall UADCompilerCore::LexAnalyzer::parseSourceCode(char const *)" (?parseSourceCode@LexAnalyzer@UADCompilerCore@@$$FQAE_NPBD@Z) en la funci "private: void __clrcall UADCompilerCore::Manager::lexAnalysis(class System::String ^)" (?lexAnalysis@Manager@UADCompilerCore@@$$FA$AAMXP$AAVString@System@@@Z)
+Manager.obj : error LNK2028: se hace referencia al s匇bolo (token) sin resolver (0A000452) "public: void __thiscall UADCompilerCore::LexAnalyzer::reset(void)" (?reset@LexAnalyzer@UADCompilerCore@@$$FQAEXXZ) en la funci "public: cli::array<class System::String ^ >^" (?compileProgram@Manager@UADCompilerCore@@$$FQ$AAMP$01AP$AAVString@System@@P$AAV34@@Z)
+Manager.obj : error LNK2019: s匇bolo externo "public: __clrcall UADCompilerCore::LexAnalyzer::LexAnalyzer(class UADCompilerCore::ErrorsModule ^)" (??0LexAnalyzer@UADCompilerCore@@$$FQAM@P$AAVErrorsModule@1@@Z) sin resolver al que se hace referencia en la funci "public: __clrcall UADCompilerCore::Manager::Manager(void)" (??0Manager@UADCompilerCore@@$$FQ$AAM@XZ)
+Manager.obj : error LNK2019: s匇bolo externo "public: __thiscall UADCompilerCore::LexAnalyzer::~LexAnalyzer(void)" (??1LexAnalyzer@UADCompilerCore@@$$FQAE@XZ) sin resolver al que se hace referencia en la funci "public: void * __thiscall UADCompilerCore::LexAnalyzer::`scalar deleting destructor'(unsigned int)" (??_GLexAnalyzer@UADCompilerCore@@$$FQAEPAXI@Z)
+Manager.obj : error LNK2019: s匇bolo externo "public: bool __thiscall UADCompilerCore::LexAnalyzer::parseSourceCode(char const *)" (?parseSourceCode@LexAnalyzer@UADCompilerCore@@$$FQAE_NPBD@Z) sin resolver al que se hace referencia en la funci "private: void __clrcall UADCompilerCore::Manager::lexAnalysis(class System::String ^)" (?lexAnalysis@Manager@UADCompilerCore@@$$FA$AAMXP$AAVString@System@@@Z)
+Manager.obj : error LNK2019: s匇bolo externo "public: void __thiscall UADCompilerCore::LexAnalyzer::reset(void)" (?reset@LexAnalyzer@UADCompilerCore@@$$FQAEXXZ) sin resolver al que se hace referencia en la funci "public: cli::array<class System::String ^ >^" (?compileProgram@Manager@UADCompilerCore@@$$FQ$AAMP$01AP$AAVString@System@@P$AAV34@@Z)
+C:\Users\Jalil Raziel\source\repos\Copilador\DLL\Binaries\x86\Debug\CopilerCore.dll : fatal error LNK1120: 8 externos sin resolver

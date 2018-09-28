@@ -1,0 +1,7 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  CopilerCore.cpp
+  Generando código...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  CopilerCore.vcxproj -> c:\users\jalil raziel\source\repos\Copilador\Debug\CopilerCore.dll

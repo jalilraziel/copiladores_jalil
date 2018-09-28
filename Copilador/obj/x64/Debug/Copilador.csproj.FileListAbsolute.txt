@@ -1,0 +1,12 @@
+c:\users\jalil raziel\source\repos\Copilador\Copilador\bin\x64\Debug\Copilador.exe.config
+c:\users\jalil raziel\source\repos\Copilador\Copilador\bin\x64\Debug\Copilador.exe
+c:\users\jalil raziel\source\repos\Copilador\Copilador\bin\x64\Debug\Copilador.pdb
+c:\users\jalil raziel\source\repos\Copilador\Copilador\bin\x64\Debug\CopilerCore.dll
+c:\users\jalil raziel\source\repos\Copilador\Copilador\bin\x64\Debug\CopilerCore.pdb
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.Form1.resources
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.Properties.Resources.resources
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.csproj.GenerateResource.cache
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.csproj.CoreCompileInputs.cache
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.csproj.CopyComplete
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.exe
+c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.pdb

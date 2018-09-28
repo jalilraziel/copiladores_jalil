@@ -1,0 +1,14 @@
+﻿  AssemblyInfo.cpp
+  CglobalNode.cpp
+  CLocalNode.cpp
+  CopilerCore.cpp
+  Ctabsym.cpp
+  ErrorsModule.cpp
+  LexAnalyzer.cpp
+c:\users\jalil raziel\source\repos\copilador\copilercore\lexanalyzer.cpp(56): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Manager.cpp
+  Token.cpp
+  Generando código...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  CopilerCore.vcxproj -> C:\Users\Jalil Raziel\source\repos\Copilador\DLL\Binaries\x64\Debug\CopilerCore.dll
