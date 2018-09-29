@@ -21,27 +21,27 @@ enum class e_state
 CopilerCore::LexAnalyzer::LexAnalyzer(ErrorsModule ^ errorsModule)
 {
 	managedRef_errorsModule = errorsModule;
-	m_Keywords.insert(std::make_pair("var", ""));
-	m_Keywords.insert(std::make_pair("int", ""));
-	m_Keywords.insert(std::make_pair("float", ""));
-	m_Keywords.insert(std::make_pair("string", ""));
-	m_Keywords.insert(std::make_pair("bool", ""));
-	m_Keywords.insert(std::make_pair("void", ""));
-	m_Keywords.insert(std::make_pair("function", ""));
-	m_Keywords.insert(std::make_pair("if", ""));
-	m_Keywords.insert(std::make_pair("else", ""));
-	m_Keywords.insert(std::make_pair("while", ""));
-	m_Keywords.insert(std::make_pair("for", ""));
-	m_Keywords.insert(std::make_pair("inc", ""));
-	m_Keywords.insert(std::make_pair("dec", ""));
-	m_Keywords.insert(std::make_pair("switch", ""));
-	m_Keywords.insert(std::make_pair("case", ""));
-	m_Keywords.insert(std::make_pair("default", ""));
-	m_Keywords.insert(std::make_pair("print", ""));
-	m_Keywords.insert(std::make_pair("read", ""));
-	m_Keywords.insert(std::make_pair("return", ""));
-	m_Keywords.insert(std::make_pair("true", ""));
-	m_Keywords.insert(std::make_pair("false*", ""));
+	m_Keywords.insert(std::make_pair("var", "var"));
+	m_Keywords.insert(std::make_pair("int", "int"));
+	m_Keywords.insert(std::make_pair("float", "float"));
+	m_Keywords.insert(std::make_pair("string", "string"));
+	m_Keywords.insert(std::make_pair("bool", "bool"));
+	m_Keywords.insert(std::make_pair("void", "void"));
+	m_Keywords.insert(std::make_pair("function", "function"));
+	m_Keywords.insert(std::make_pair("if", "if"));
+	m_Keywords.insert(std::make_pair("else", "else"));
+	m_Keywords.insert(std::make_pair("while", "while"));
+	m_Keywords.insert(std::make_pair("for", "for"));
+	m_Keywords.insert(std::make_pair("inc", "inc"));
+	m_Keywords.insert(std::make_pair("dec", "dec"));
+	m_Keywords.insert(std::make_pair("switch", "switch"));
+	m_Keywords.insert(std::make_pair("case", "case"));
+	m_Keywords.insert(std::make_pair("default", "default"));
+	m_Keywords.insert(std::make_pair("print", "print"));
+	m_Keywords.insert(std::make_pair("read", "read"));
+	m_Keywords.insert(std::make_pair("return", "return"));
+	m_Keywords.insert(std::make_pair("true", "true"));
+	m_Keywords.insert(std::make_pair("false", "false"));
 }
 
 
@@ -113,32 +113,34 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				else if (*CurrChar == '<' || *CurrChar == '>' || *CurrChar == '!' || *CurrChar == '=')
 				{
 					buffer.clear();
-					m_Tokens.push_back(token1);
 					buffer.append(CurrChar, 1);
 					CurrChar++;
 					state = e_state::OPERADOR_RELACIONAL;
 				}
-				else if (*CurrChar == '.' || *CurrChar == ',' || *CurrChar == ';' || *CurrChar == ':')
+				else if (*CurrChar == '.' || *CurrChar == ',')
 				{
 					buffer.clear();
-					buffer.append(CurrChar, 1);
-					CurrChar++;
+					state = e_state::DELIMITADOR;
+				}
+				else if (*CurrChar == ';' || *CurrChar == ':')
+				{
+					buffer.clear();
 					state = e_state::DELIMITADOR;
 				}
 				else if (*CurrChar == '(' || *CurrChar == ')' || *CurrChar == '{' || *CurrChar == '}')
 				{
+					buffer.clear();
+					buffer.append(CurrChar, 1);
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::OPERADOR_AGRUPADOR, linenumber);
 					m_Tokens.push_back(token1);
 					CurrChar++;
 				}
 				else if (*CurrChar == '[' || *CurrChar == ']')
 				{
+					buffer.clear();
+					buffer.append(CurrChar, 1);
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::OPERADOR_DIMENCIONAL, linenumber);
 					m_Tokens.push_back(token1);
-					CurrChar++;
-				}
-				else if (*CurrChar == ' ')
-				{
 					CurrChar++;
 				}
 				else if (*CurrChar == ' ')
@@ -149,22 +151,32 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				{
 					CurrChar++;
 				}
-				else if (*CurrChar == '\0')
-				{
-					continua = false;
-				}
-				if (*CurrChar == '\n')
+				else if (*CurrChar == '\r')
 				{
 					linenumber++;
 					CurrChar++;
 				}
+				else if (*CurrChar == '\0')
+				{
+					continua = false;
+				}
+				else if (*CurrChar == '\n')
+				{
+					CurrChar++;
+				}
+				else
+				{
+					buffer.append(CurrChar, 1);
+					managedRef_errorsModule->addErrorLex(linenumber, LEX_ERROR_INVALID_CHARACTER, buffer.c_str());
+					CurrChar++;
+				}
+
 			break;
 		case e_state::ID:
 			if (isalpha(static_cast<unsigned char> (*CurrChar)) || isdigit(static_cast<unsigned char>(*CurrChar)) || *CurrChar == '_')
 			{
 				buffer.append(CurrChar, 1);
 				CurrChar++;
-				break;
 			}
 			else
 			{
@@ -172,13 +184,11 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				{
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::KEYWORD, linenumber);
 					m_Tokens.push_back(token1);
-					CurrChar++;
 				}
 				else
 				{
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::ID, linenumber);
 					m_Tokens.push_back(token1);
-					CurrChar++;
 				}
 				state = e_state::START;
 			}
@@ -228,10 +238,9 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 					managedRef_errorsModule->addErrorLex(linenumber, LEX_ERROR_STRING_NOT_CLOSED, buffer.c_str());
 					state = e_state::START;
 				}
-				else if (*CurrChar == '\n')
+				else if (*CurrChar == '\n' || *CurrChar == '\r')
 				{
 					managedRef_errorsModule->addErrorLex(linenumber, LEX_ERROR_STRING_NOT_CLOSED, buffer.c_str());
-					CurrChar++;
 					state = e_state::START;
 				}
 				else
@@ -264,13 +273,11 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				if (buffer.back() == '&')
 				{
 					managedRef_errorsModule->addErrorLex(linenumber, LEX_ERROR_INVALID_LOGICAL_OP_AND, buffer.c_str());
-					CurrChar++;
 					state = e_state::START;
 				}
 				else
 				{
 					managedRef_errorsModule->addErrorLex(linenumber, LEX_ERROR_INVALID_LOGICAL_OP_OR, buffer.c_str());
-					CurrChar++;
 					state = e_state::START;
 				}
 			}
@@ -338,7 +345,7 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 						state = e_state::START;
 						break;
 				}
-				if (buffer[0] == '=')
+				else if (buffer[0] == '=')
 				{
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::OPERADOR_ASIGNADOR, linenumber);
 					m_Tokens.push_back(token1);
@@ -358,10 +365,10 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 			}
 			else
 			{
+				buffer.append(CurrChar, 1);
 				token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::DELIMITADOR, linenumber);
 				m_Tokens.push_back(token1);
 				CurrChar++;
-
 				state = e_state::START;
 			}
 			break;
@@ -375,7 +382,12 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 			}
 			else if (*CurrChar == '/')
 			{
-				if (buffer.back() == '*')
+				if (buffer == "")
+				{
+					buffer.append(CurrChar, 1);
+					CurrChar++;
+				}
+				else if (buffer.back() == '*')
 				{
 					buffer.append(CurrChar, 1);
 					CurrChar++;

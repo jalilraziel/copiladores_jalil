@@ -5,10 +5,11 @@
   Ctabsym.cpp
   ErrorsModule.cpp
   LexAnalyzer.cpp
-c:\users\jalil raziel\source\repos\copilador\copilercore\lexanalyzer.cpp(56): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\lexanalyzer.cpp(56): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
   Manager.cpp
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\manager.cpp(80): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   Token.cpp
   Generando código...
   .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  CopilerCore.vcxproj -> C:\Users\Jalil Raziel\source\repos\Copilador\DLL\Binaries\x64\Debug\CopilerCore.dll
+  CopilerCore.vcxproj -> C:\Users\Jalil Raziel\source\repos\Copilador _jalil\DLL\Binaries\x64\Debug\CopilerCore.dll

@@ -10,3 +10,16 @@ c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.c
 c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.csproj.CopyComplete
 c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.exe
 c:\users\jalil raziel\source\repos\Copilador\Copilador\obj\x64\Debug\Copilador.pdb
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\bin\x64\Debug\Copilador.exe.config
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\bin\x64\Debug\Copilador.exe
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\bin\x64\Debug\Copilador.pdb
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\bin\x64\Debug\CopilerCore.dll
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\bin\x64\Debug\CopilerCore.pdb
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.Form1.resources
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.Properties.Resources.resources
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.csproj.GenerateResource.cache
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.csproj.CoreCompileInputs.cache
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.csproj.CopyComplete
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.exe
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.pdb
+C:\Users\Jalil Raziel\source\repos\Copilador _jalil\Copilador\obj\x64\Debug\Copilador.csprojAssemblyReference.cache

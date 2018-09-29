@@ -37,9 +37,10 @@ namespace Copilador
             var DLL = Assembly.LoadFile(dllFullPath); 
             var DLLType = DLL.GetType("CopilerCore.Manager");
             compilerDLLInstance = Activator.CreateInstance(DLLType);
-            dataGridView1.Columns.Add("Texto", "Texto");
-            dataGridView1.Columns.Add("Tipo", "Tipo");
-            dataGridView1.Columns.Add("Linea", "Linea");
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].Name ="Texto";
+            dataGridView1.Columns[1].Name ="Tipo";
+            dataGridView1.Columns[2].Name ="Linea";
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,20 +65,32 @@ namespace Copilador
 
         private void copilarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            textoutput.Clear();
+            dataGridView1.Rows.Clear();
             string[] copilationDetails = compilerDLLInstance.compileProgram(textsrc.Text);//copilador.copilerProgram(textsrc.Text);
-            //int i = 0;
-            //for (i = 0; copilationDetails[i] != "weamagicadeseparacion"; i++) { }
-            //String[] NewArray = new String[i+2];
-            //copilationDetails.CopyTo(NewArray, i);
-            textoutput.Lines = copilationDetails;
+            int j = 0;
+            for (j = 0; copilationDetails[j] != "wea magica de separion"; j++){}
+                int i = copilationDetails.Length - j;
+                String[] NewArray = new String[j];
+                String[] NewTokens = new String[i];
+            for (int x = 0; x < copilationDetails.Length; x++)
+            {
+                if (x < NewArray.Length) {
+                    NewArray[x] = copilationDetails[x];
+                    } 
+                    else NewTokens[x-j] = copilationDetails[x];
 
-            //for (i = i+2; copilationDetails[i] != null; i++)
-            //{           
-            //    string[] token = copilationDetails[i].Split(',');
-            //    dataGridView1.Columns.Add("Texto", token[0]);
-            //    dataGridView1.Columns.Add("Tipo", token[1]);
-            //    dataGridView1.Columns.Add("Linea", token[2]);
-            //}
+            }
+            textoutput.Lines = NewArray;
+            for (int a = 1; NewTokens[a] != null; a++)
+            {
+                int b = dataGridView1.Rows.Add();
+                String[] token = NewTokens[a].Split('@');
+                dataGridView1.Rows[b].Cells[0].Value = token[0];
+                dataGridView1.Rows[b].Cells[1].Value = token[1];
+                dataGridView1.Rows[b].Cells[2].Value = token[2];
+            }
+            //textoutput.Lines = copilationDetails;
         }
 
         private void opeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -187,6 +200,10 @@ namespace Copilador
             return es;
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 
 }

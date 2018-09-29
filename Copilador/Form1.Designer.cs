@@ -53,6 +53,7 @@
             this.textsrc.Location = new System.Drawing.Point(12, 37);
             this.textsrc.Multiline = true;
             this.textsrc.Name = "textsrc";
+            this.textsrc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textsrc.Size = new System.Drawing.Size(546, 290);
             this.textsrc.TabIndex = 0;
             this.textsrc.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -62,6 +63,7 @@
             this.textoutput.Location = new System.Drawing.Point(12, 333);
             this.textoutput.Multiline = true;
             this.textoutput.Name = "textoutput";
+            this.textoutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textoutput.Size = new System.Drawing.Size(852, 105);
             this.textoutput.TabIndex = 1;
             // 
@@ -94,6 +96,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(876, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivosToolStripMenuItem
             // 
@@ -110,35 +113,35 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // opeToolStripMenuItem
             // 
             this.opeToolStripMenuItem.Name = "opeToolStripMenuItem";
-            this.opeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opeToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.opeToolStripMenuItem.Text = "Open...";
             this.opeToolStripMenuItem.Click += new System.EventHandler(this.opeToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveAsToolStripMenuItem.Text = "Save as...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
