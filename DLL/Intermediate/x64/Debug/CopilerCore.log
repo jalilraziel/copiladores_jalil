@@ -2,14 +2,18 @@
   CglobalNode.cpp
   CLocalNode.cpp
   CopilerCore.cpp
+  cst_BloqFunciones.cpp
+  cst_Funcion.cpp
+  cst_Parametros.cpp
+  cst_Program.cpp
+  cst_Variables.cpp
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\cst_variables.cpp(39): error C3867: 'CopilerCore::Token::getLex': sintaxis no estándar; utilice  '&' para crear un puntero al miembro
   Ctabsym.cpp
   ErrorsModule.cpp
   LexAnalyzer.cpp
 c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\lexanalyzer.cpp(56): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
   Manager.cpp
 c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\manager.cpp(80): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  SyntAnalyzer.cpp
   Token.cpp
   Generando código...
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  CopilerCore.vcxproj -> C:\Users\Jalil Raziel\source\repos\Copilador _jalil\DLL\Binaries\x64\Debug\CopilerCore.dll

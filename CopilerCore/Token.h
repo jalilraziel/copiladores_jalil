@@ -37,6 +37,6 @@ namespace CopilerCore
 		std::string getLex() const { return m_Lex; }
 		std::string getTypeStr(); 
 		TOKEN_TYPE getType() const { return m_Type; }
-		int getLineNumber() const { return m_Type; }
+		int getLineNumber() const { return m_LineNumber; }
 	};
 }

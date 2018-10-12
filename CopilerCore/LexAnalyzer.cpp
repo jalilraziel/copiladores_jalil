@@ -56,6 +56,17 @@ int CopilerCore::LexAnalyzer::tokensize()
 	return m_Tokens.size();
 }
 
+const CopilerCore::Token* CopilerCore::LexAnalyzer::getNextToken()
+{
+	id++;
+	return m_Tokens[id];
+}
+
+const CopilerCore::Token * CopilerCore::LexAnalyzer::peekToken()
+{
+	return m_Tokens[id + 1];
+}
+
 bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 {
 
@@ -153,7 +164,6 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				}
 				else if (*CurrChar == '\r')
 				{
-					linenumber++;
 					CurrChar++;
 				}
 				else if (*CurrChar == '\0')
@@ -162,6 +172,7 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 				}
 				else if (*CurrChar == '\n')
 				{
+					linenumber++;
 					CurrChar++;
 				}
 				else
@@ -180,7 +191,8 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 			}
 			else
 			{
-				if (m_Keywords.find(buffer) != m_Keywords.end())
+				//if (m_Keywords.find(buffer) != m_Keywords.end())
+				if (m_Keywords.count(buffer) > 0)
 				{
 					token1 = new Token(buffer, CopilerCore::TOKEN_TYPE::KEYWORD, linenumber);
 					m_Tokens.push_back(token1);
@@ -415,7 +427,6 @@ bool CopilerCore::LexAnalyzer::parseSourceCode(const char * sourceCode)
 
 void CopilerCore::LexAnalyzer::reset()
 {
-	m_Keywords.clear();
 	m_Tokens.clear();
 }
 

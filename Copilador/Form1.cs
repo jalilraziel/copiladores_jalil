@@ -56,6 +56,7 @@ namespace Copilador
             }
             textoutput.Clear();
             textsrc.Clear();
+            dataGridView1.Rows.Clear();
 
         }
 
@@ -99,11 +100,14 @@ namespace Copilador
             {
                 if (MessageBox.Show("¿Desea guardar el archivo actual?", "Copilador JR", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if(file != "")
+                    if (file != "")
                     {
-                        
+
                     }
-                    Guardarcomo();
+                    else
+                    {
+                        Guardarcomo();
+                    }
                 }
 
             }
@@ -129,6 +133,7 @@ namespace Copilador
             {
                 Guardarcomo();
             }
+            dataGridView1.Rows.Clear();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,6 +144,7 @@ namespace Copilador
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Guardarcomo();
+            dataGridView1.Rows.Clear();
         }
 
         void Guardarcomo()
@@ -203,6 +209,15 @@ namespace Copilador
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void tabla_tokens()
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].Name = "Texto";
+            dataGridView1.Columns[1].Name = "Tipo";
+            dataGridView1.Columns[2].Name = "Linea";
         }
     }
 

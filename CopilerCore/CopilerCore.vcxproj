@@ -139,11 +139,17 @@
     <ClInclude Include="CglobalNode.h" />
     <ClInclude Include="CLocalNode.h" />
     <ClInclude Include="CopilerCore.h" />
+    <ClInclude Include="cst_BloqFunciones.h" />
+    <ClInclude Include="cst_Funcion.h" />
+    <ClInclude Include="cst_Parametros.h" />
+    <ClInclude Include="cst_Program.h" />
+    <ClInclude Include="cst_Variables.h" />
     <ClInclude Include="Ctabsym.h" />
     <ClInclude Include="ErrorsModule.h" />
     <ClInclude Include="E_SCOPE.h" />
     <ClInclude Include="LexAnalyzer.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="SyntAnalyzer.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,10 +157,16 @@
     <ClCompile Include="CglobalNode.cpp" />
     <ClCompile Include="CLocalNode.cpp" />
     <ClCompile Include="CopilerCore.cpp" />
+    <ClCompile Include="cst_BloqFunciones.cpp" />
+    <ClCompile Include="cst_Funcion.cpp" />
+    <ClCompile Include="cst_Parametros.cpp" />
+    <ClCompile Include="cst_Program.cpp" />
+    <ClCompile Include="cst_Variables.cpp" />
     <ClCompile Include="Ctabsym.cpp" />
     <ClCompile Include="ErrorsModule.cpp" />
     <ClCompile Include="LexAnalyzer.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="SyntAnalyzer.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
