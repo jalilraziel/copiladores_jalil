@@ -3,16 +3,18 @@
 
 
 
-CopilerCore::SintAnalyzer::SintAnalyzer(LexAnalyzer *a)
+CopilerCore::SintAnalyzer::SintAnalyzer(LexAnalyzer * a, ErrorsModule ^ b, Ctabsym * c)
 {
-	LexAnalyzer* m_lex = a;
+	m_lex = a;
+	errormod = b;
+	tabsyb = c;
 }
 
 
 
 void CopilerCore::SintAnalyzer::checkSyntax()
 {
-	cst_Program* p = new cst_Program(m_lex);
+	cst_Program* p = new cst_Program(m_lex, errormod, tabsyb);
 	p->checkSyntax();
 }
 

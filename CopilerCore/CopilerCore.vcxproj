@@ -139,6 +139,7 @@
     <ClInclude Include="CglobalNode.h" />
     <ClInclude Include="CLocalNode.h" />
     <ClInclude Include="CopilerCore.h" />
+    <ClInclude Include="cStament.h" />
     <ClInclude Include="cst_BloqFunciones.h" />
     <ClInclude Include="cst_Funcion.h" />
     <ClInclude Include="cst_Parametros.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="CglobalNode.cpp" />
     <ClCompile Include="CLocalNode.cpp" />
     <ClCompile Include="CopilerCore.cpp" />
+    <ClCompile Include="cStament.cpp" />
     <ClCompile Include="cst_BloqFunciones.cpp" />
     <ClCompile Include="cst_Funcion.cpp" />
     <ClCompile Include="cst_Parametros.cpp" />

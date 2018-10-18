@@ -1,20 +1,22 @@
 #include "CLocalNode.h"
 
 
-std::string CLocalNode::GetSymbolType(std::string name, E_SCOPE scope, std::string func)
+std::string CopilerCore::CLocalNode::GetSymbolType(std::string name, E_SCOPE scope, std::string func)
 {
+
+
 	return std::string();
 }
 
-int CLocalNode::GetSymbolDimen(std::string name, E_SCOPE scope, std::string func)
+int CopilerCore::CLocalNode::GetSymbolDimen(std::string name, E_SCOPE scope, std::string func)
 {
 	return 0;
 }
 
-CLocalNode::CLocalNode()
+CopilerCore::CLocalNode::CLocalNode()
 {
 }
 
-CLocalNode::~CLocalNode()
+CopilerCore::CLocalNode::~CLocalNode()
 {
 }
