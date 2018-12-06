@@ -14,7 +14,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_If(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  WHILE
@@ -26,7 +26,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_While(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  FOR
@@ -38,7 +38,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_For(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  SWITCH
@@ -50,7 +50,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Switch(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  ASSIGN
@@ -62,7 +62,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Assign(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  READ
@@ -74,7 +74,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Read(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  PRINT
@@ -86,7 +86,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Print(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  RETURN
@@ -98,7 +98,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Return(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  FUNCTION CALL
@@ -110,7 +110,7 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Func_Call(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
 	};
 
 	////////  BLOCK STATEMENT
@@ -122,7 +122,32 @@ namespace CopilerCore
 
 	public:
 		cStamnet_Block_Statement(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		bool checkSyntax();
+	};
+
+	////////  TERM
+	class cStamnet_Term
+	{
+		LexAnalyzer* m_lex;
+		msclr::gcroot<ErrorsModule ^> errormod;
+		Ctabsym* tabsyb;
+
+	public:
+		cStamnet_Term(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
+		~cStamnet_Term();
+		bool checkSyntax();
+	};
+
+	////////  EXP_LOG
+	class Exp_Log
+	{
+		LexAnalyzer* m_lex;
+		msclr::gcroot<ErrorsModule ^> errormod;
+		Ctabsym* tabsyb;
+
+	public:
+		Exp_Log(LexAnalyzer* lexAnalyzer, ErrorsModule^ errorModule, Ctabsym* symTable);
+		~Exp_Log();
+		bool checkSyntax();
 	};
 }
-

@@ -16,10 +16,9 @@ namespace CopilerCore
 		CLocalNode* m_localNode;
 
 	public:
-		std::string GetSymbolType(std::string name, E_SCOPE scope, std::string func);
-		int GetSymbolDimen(std::string name, E_SCOPE scope, std::string func);
-		CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion);
-		CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion, CLocalNode* localNode);
+		void add_lNode(CLocalNode* node);
+		CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion, void *value, CLocalNode* localNode);
+		CglobalNode();
 		~CglobalNode();
 	};
 }

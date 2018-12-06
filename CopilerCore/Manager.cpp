@@ -20,6 +20,18 @@ CopilerCore::Manager::~Manager()
 		cpp_lexAnalyzer = nullptr;
 	}
 
+	if (cpp_SyntAnalyzer != nullptr)
+	{
+		delete cpp_SyntAnalyzer;
+		cpp_SyntAnalyzer = nullptr;
+	}
+
+	if (cpp_SemAnalizer != nullptr)
+	{
+		delete cpp_SemAnalizer;
+		cpp_SemAnalizer = nullptr;
+	}
+
 	// Memory of ERRORS MODULE is automatically collected (allocated with gcnew)
 }
 
@@ -48,6 +60,10 @@ cli::array<String ^> ^ CopilerCore::Manager::compileProgram(String ^ sourceCode)
 
 	lexAnalysis(sourceCode);
 
+	synAnalysis();
+
+	semAnalysis();
+
 	compilationDetails = getCompilationDetails();
 
 	return compilationDetails;
@@ -60,6 +76,22 @@ void CopilerCore::Manager::lexAnalysis(String ^ sourceCode)
 	if (cpp_lexAnalyzer != nullptr)
 	{
 		cpp_lexAnalyzer->parseSourceCode((const char *)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(sourceCode).ToPointer());
+	}
+}
+
+void CopilerCore::Manager::synAnalysis()
+{
+	if (cpp_SyntAnalyzer != nullptr)
+	{
+		cpp_SyntAnalyzer->checkSyntax();
+	}
+}
+
+void CopilerCore::Manager::semAnalysis()
+{
+	if (cpp_SemAnalizer != nullptr)
+	{
+		cpp_SemAnalizer->checkExpressions();
 	}
 }
 

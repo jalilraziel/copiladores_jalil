@@ -136,6 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cExp_Log.h" />
     <ClInclude Include="CglobalNode.h" />
     <ClInclude Include="CLocalNode.h" />
     <ClInclude Include="CopilerCore.h" />
@@ -147,14 +148,17 @@
     <ClInclude Include="cst_Variables.h" />
     <ClInclude Include="Ctabsym.h" />
     <ClInclude Include="ErrorsModule.h" />
+    <ClInclude Include="ExpLogTreeNod.h" />
     <ClInclude Include="E_SCOPE.h" />
     <ClInclude Include="LexAnalyzer.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="SemAnalizer.h" />
     <ClInclude Include="SyntAnalyzer.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="cExp_Log.cpp" />
     <ClCompile Include="CglobalNode.cpp" />
     <ClCompile Include="CLocalNode.cpp" />
     <ClCompile Include="CopilerCore.cpp" />
@@ -166,8 +170,10 @@
     <ClCompile Include="cst_Variables.cpp" />
     <ClCompile Include="Ctabsym.cpp" />
     <ClCompile Include="ErrorsModule.cpp" />
+    <ClCompile Include="ExpLogTreeNod.cpp" />
     <ClCompile Include="LexAnalyzer.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="SemAnalizer.cpp" />
     <ClCompile Include="SyntAnalyzer.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>

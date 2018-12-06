@@ -18,7 +18,8 @@ namespace CopilerCore
 
 	public:
 		cst_Program(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		~cst_Program();
+		bool checkSyntax();
 	};
 }
 

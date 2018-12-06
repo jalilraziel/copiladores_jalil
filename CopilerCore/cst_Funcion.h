@@ -1,9 +1,8 @@
 #pragma once
-#include "LexAnalyzer.h"
-#include "ErrorsModule.h"
 #include "Ctabsym.h"
 #include "cst_Variables.h"
 #include "cst_Parametros.h"
+#include "cst_BloqFunciones.h"
 namespace CopilerCore
 {
 	class cst_Funcion
@@ -14,6 +13,7 @@ namespace CopilerCore
 
 	public:
 		cst_Funcion(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		~cst_Funcion();
+		bool checkSyntax();
 	};
 }

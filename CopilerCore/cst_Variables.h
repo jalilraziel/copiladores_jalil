@@ -17,7 +17,8 @@ namespace CopilerCore
 
 	public:
 		cst_Variables(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax(bool node);
+		~cst_Variables();
+		bool checkSyntax(E_SCOPE scope, string funcName = "");
 	};
 
 }

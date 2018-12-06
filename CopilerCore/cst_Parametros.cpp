@@ -9,57 +9,42 @@ CopilerCore::cst_Parametros::cst_Parametros(LexAnalyzer * a, ErrorsModule ^ b, C
 	tabsyb = c;
 }
 
-void CopilerCore::cst_Parametros::checkSyntax()
+CopilerCore::cst_Parametros::~cst_Parametros() {
+}
+
+bool CopilerCore::cst_Parametros::checkSyntax(std::string funcName)
 {
 	std::vector<string> tempIDs;
 	std::vector<string> IDtype;
 	std::vector<int> IDtypeDimen;
 	const Token *t = m_lex->peekToken();
-	while (!t->getLex().compare(")"))
+	while (m_lex->peekToken()->getLex().compare(")"))
 	{
 		int  sizes = 0;
 		do
 		{
 			t = m_lex->getNextToken();
-			if (t->getType() != ID)
-			{
-				//Error
+			if (t->getType() != ID) {
+				if (!errormod->addErrorSin(t->getLineNumber(), "no se reconoce variable")) return false;
 			}
-			else
-			{
+			else{
 				tempIDs.push_back(t->getLex());
 			}			
 			t = m_lex->getNextToken();
 		} while (!t->getLex().compare(","));
-
-		if (t->getLex().compare(":"))
-		{
-			//Error
+		if (t->getLex().compare(":")) {
+			if (!errormod->addErrorSin(t->getLineNumber(), "se esperaba :")) return false;
 		}
 		t = m_lex->getNextToken();
-		if (!t->getLex().compare("int") || !t->getLex().compare("float") || !t->getLex().compare("string") || !t->getLex().compare("bool"))
-		{
-			IDtype.push_back(t->getLex());
-			t = m_lex->getNextToken();
+		if (!t->getLex().compare("int") || !t->getLex().compare("float") || !t->getLex().compare("string") || !t->getLex().compare("bool")) {
+			for (int i = 0; i < tempIDs.size(); i++) {
+				tabsyb->addsymbol(tempIDs[i], t->getLex(), PARAMETRO, 0, nullptr, nullptr);
+			}
 		}
 		else
 		{
-			//Error
-		}
-		if (t->getLex().compare(")"))
-		{
-			//Error
+			if (!errormod->addErrorSin(t->getLineNumber(), "no se reconoce variable")) return false;
 		}
 	}
-
-	int j = 0;
-	for (size_t x = 0; x > IDtype.size(); x++)
-	{
-		for (size_t i = 0; i > IDtypeDimen[j]; i++)
-		{
-				CglobalNode(tempIDs[i], IDtype[i], PARAMETRO, 0);
-		}
-
-		j++;
-	}
+	return true;	
 }

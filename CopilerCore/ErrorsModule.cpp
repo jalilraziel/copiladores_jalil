@@ -30,6 +30,10 @@ int CopilerCore::ErrorsModule::ErrorSize()
 void CopilerCore::ErrorsModule::reset()
 {
 	m_numErrors = 0;
+	for (int i = 0; i < MAX_UAD_COMPILER_ERRORS; ++i)
+	{
+		m_errorsArray[i] = gcnew String("");
+	}
 }
 
 /*
@@ -39,6 +43,20 @@ bool CopilerCore::ErrorsModule::addErrorLex(int lineNum, const char *desc, const
 	String ^ strDesc = gcnew String(desc);
 	String ^ strLine = gcnew String(line);
 	return addError(CopilerCore::ERROR_PHASE::LEXIC_ANALYZER, lineNum, strDesc, strLine);
+}
+
+bool CopilerCore::ErrorsModule::addErrorSin(int lineNum, const char * desc)
+{
+	String ^ strDesc = gcnew String(desc);
+	String ^ strLine = gcnew String("");
+	return addError(CopilerCore::ERROR_PHASE::SYNTAX_ANALYZER, lineNum, strDesc, strLine);
+}
+
+bool CopilerCore::ErrorsModule::addErrorSem(int lineNum, const char * desc)
+{
+	String ^ strDesc = gcnew String(desc);
+	String ^ strLine = gcnew String("");
+	return addError(CopilerCore::ERROR_PHASE::SYNTAX_ANALYZER, lineNum, strDesc, strLine);
 }
 
 /*

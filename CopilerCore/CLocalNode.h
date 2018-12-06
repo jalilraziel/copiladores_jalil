@@ -3,10 +3,16 @@
 #include <string>
 #include "CLocalNode.h"
 
-namespace CopilerCore
-{
-	class CLocalNode
-	{
+namespace CopilerCore {
+	enum class SCOPE{
+		UNDEFINED,
+			FUNC,
+			GLOBAL_VAR,
+			LOCAL_VAR,
+			PARAM
+	};
+
+	class CLocalNode{
 	private:
 		std::string m_type;
 		std::string m_funcName;
@@ -16,8 +22,8 @@ namespace CopilerCore
 		CLocalNode* m_localNode;
 
 	public:
-		std::string GetSymbolType(std::string name, E_SCOPE scope, std::string func);
-		int GetSymbolDimen(std::string name, E_SCOPE scope, std::string func);
+		void add_lNode(CLocalNode* node);
+		CLocalNode(std::string funcname, std::string type, E_SCOPE scope, int dimencion, void *value, CLocalNode* localNode);
 		CLocalNode();
 		~CLocalNode();
 

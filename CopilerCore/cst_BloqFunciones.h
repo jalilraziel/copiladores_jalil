@@ -3,6 +3,7 @@
 #include "ErrorsModule.h"
 #include "Ctabsym.h"
 #include "cst_Variables.h"
+#include "cStament.h"
 
 namespace CopilerCore
 {
@@ -14,7 +15,8 @@ namespace CopilerCore
 
 	public:
 		cst_BloqFunciones(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		~cst_BloqFunciones();
+		bool checkSyntax(std::string funcName);
 	};
 }
 

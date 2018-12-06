@@ -1,4 +1,5 @@
 ﻿  AssemblyInfo.cpp
+  cExp_Log.cpp
   CglobalNode.cpp
   CLocalNode.cpp
   CopilerCore.cpp
@@ -8,15 +9,28 @@
   cst_Parametros.cpp
   cst_Program.cpp
   cst_Variables.cpp
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\cst_variables.cpp(33): warning C4566: el carácter representado por el nombre de carácter universal '\u00F1' no se puede representar en la página de códigos actual (932)
   Ctabsym.cpp
   ErrorsModule.cpp
+  ExpLogTreeNod.cpp
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(134): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(153): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(154): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(155): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(156): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(157): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(158): warning C4312: 'conversión de tipo': conversión de 'int' a 'void *' de mayor tamaño
   LexAnalyzer.cpp
 c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\lexanalyzer.cpp(56): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
   Manager.cpp
-c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\manager.cpp(80): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\manager.cpp(112): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  SemAnalizer.cpp
   SyntAnalyzer.cpp
   Token.cpp
   Generando código...
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\explogtreenod.cpp(168): warning C4715: 'CopilerCore::ExpLogTreeNod::evaluateNode': no todas las rutas de acceso de control devuelven un valor
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\cst_bloqfunciones.cpp(120): warning C4715: 'CopilerCore::cst_BloqFunciones::checkSyntax': no todas las rutas de acceso de control devuelven un valor
+c:\users\jalil raziel\source\repos\copilador _jalil\copilercore\cstament.cpp(47): warning C4715: 'CopilerCore::cStamnet_Block_Statement::checkSyntax': no todas las rutas de acceso de control devuelven un valor
   .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   CopilerCore.vcxproj -> C:\Users\Jalil Raziel\source\repos\Copilador _jalil\DLL\Binaries\x64\Debug\CopilerCore.dll

@@ -1,32 +1,26 @@
 #include "CglobalNode.h"
 
-std::string CopilerCore::CglobalNode::GetSymbolType(std::string name, E_SCOPE scope, std::string func)
-{
-	return std::string();
+void CopilerCore::CglobalNode::add_lNode(CLocalNode * node) {
+	if (m_localNode) {
+		m_localNode->add_lNode(node);
+	}
+	else {
+		m_localNode = node;
+	}
 }
 
-int CopilerCore::CglobalNode::GetSymbolDimen(std::string name, E_SCOPE scope, std::string func)
-{
-	return 0;
+CopilerCore::CglobalNode::CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion, void *value, CLocalNode * localNode) {
+	m_name = name;
+	m_type = type;
+	m_scope = scope;
+	m_dimen = dimencion;
+	m_values = value;
+	m_localNode = localNode;
 }
 
-CopilerCore::CglobalNode::CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion)
-{
-	this->m_name = name;
-	this->m_type = type;
-	this->m_scope = scope;
-	this->m_dimen = dimencion;
+CopilerCore::CglobalNode::CglobalNode() {
 }
 
-CopilerCore::CglobalNode::CglobalNode(std::string name, std::string type, E_SCOPE scope, int dimencion, CLocalNode * localNode)
-{
-	this->m_name = name;
-	this->m_type = type;
-	this->m_scope = scope;
-	this->m_dimen = dimencion;
-	this->m_localNode = localNode;
-}
-
-CopilerCore::CglobalNode::~CglobalNode()
-{
+CopilerCore::CglobalNode::~CglobalNode() {
+	if (m_localNode) delete m_localNode;
 }

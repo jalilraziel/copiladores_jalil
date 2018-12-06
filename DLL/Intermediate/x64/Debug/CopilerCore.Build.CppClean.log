@@ -1,7 +1,9 @@
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\vc141.pdb
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\token.obj
+c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\syntanalyzer.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\manager.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\lexanalyzer.obj
+c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\explogtreenod.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\errorsmodule.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\ctabsym.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\cst_variables.obj
@@ -13,8 +15,8 @@ c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\c
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\copilercore.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\clocalnode.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\cglobalnode.obj
+c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\cexp_log.obj
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\assemblyinfo.obj
-c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\copilercore.vcxprojassemblyreference.cache
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\copilercore.tlog\cl.command.1.tlog
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\copilercore.tlog\cl.read.1.tlog
 c:\users\jalil raziel\source\repos\copilador _jalil\dll\intermediate\x64\debug\copilercore.tlog\cl.write.1.tlog

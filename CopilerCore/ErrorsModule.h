@@ -32,6 +32,8 @@ namespace CopilerCore
 		int ErrorSize();
 		void reset();
 		bool addErrorLex(int lineNum, const char *desc, const char *line);
+		bool addErrorSin(int lineNum, const char *desc);
+		bool addErrorSem(int lineNum, const char *desc);
 
 		property cli::array<String ^> ^ Errors
 		{

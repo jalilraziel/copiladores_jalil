@@ -15,6 +15,7 @@ namespace CopilerCore
 
 	public:
 		cst_Parametros(LexAnalyzer* m_lex, ErrorsModule^ errormod, Ctabsym* tabsyb);
-		void checkSyntax();
+		~cst_Parametros();
+		bool checkSyntax(std::string funcName);
 	};
 }
